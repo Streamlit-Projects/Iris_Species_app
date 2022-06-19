@@ -7,11 +7,9 @@ import os.path
 
 dir_name = os.path.abspath(os.path.dirname(__file__))
 
-@st.cache
-def load_model():
-    location = os.path.join('ml_models\knn_model.pkl')
-	loaded_model = joblib.load(open(location,"rb"))
-	return loaded_model
+def load_model(model_file):
+    loaded_model = joblib.load(open(os.path.join(model_file),"rb"))
+    return loaded_model
 
 
 def run_ml_app():
