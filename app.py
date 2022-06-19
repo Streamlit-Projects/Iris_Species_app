@@ -30,10 +30,10 @@ def main():
         - EDA Section: Exploratory Data Analysis of Data
         - ML Section: ML Predictor App (using k-NN)
         """)
-        elif choice == "EDA":
-            run_eda_app()
-        elif choice == "ML":
-            run_ml_app()
+    elif choice == "EDA":
+        run_eda_app()
+    elif choice == "ML":
+        run_ml_app()
 
 if __name__ == '__main__':
     main()
