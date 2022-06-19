@@ -1,14 +1,28 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import os.path
 
 # Imports for plotly:
 import plotly.express as px
 
 
+#dir_name = os.path.abspath(os.path.dirname(__file__))
+location = os.path.join(dir_name, 'bobrza1.csv')
+bobrza_locations = pd.read_csv(location)
+
+
+
+
+
+
+
+
 @st.cache(allow_output_mutation=True)
 def load_data(data_path):
-    df = pd.read_csv(data_path)
+    dir_name = os.path.abspath(os.path.dirname(__file__))
+    location = os.path.join(data_path, 'Iris.csv')
+    df = pd.read_csv(location)
     return df
 
 def spc_id(i):
@@ -19,7 +33,7 @@ def spc_id(i):
     else:
         return 3
 
-DATA_PATH = ("data\Iris.csv")
+DATA_PATH = ("data")
 
 def run_eda_app():
     st.subheader("Exploratory Data Analysis Section")
