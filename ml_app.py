@@ -5,10 +5,10 @@ import joblib
 from PIL import Image
 import os.path
 
-dir_name = os.path.abspath(os.path.dirname(__file__))
 
 def load_model(model_file):
-    loaded_model = joblib.load(open(os.path.join(model_file),"rb"))
+    dir_ml = os.path.abspath(os.path.ml_models(__file__))
+    loaded_model = joblib.load(open(os.path.join(dir_ml, model_file),"rb"))
     return loaded_model
 
 
@@ -16,12 +16,13 @@ def run_ml_app():
     st.subheader("Machine Learning Section")
     
     # Loading our pretrained knn model:
-    knn_model = load_model("ml_models\knn_model.pkl")
+    knn_model = load_model("knn_model.pkl")
     
     # Load iris images:
-    setosa = Image.open("iris_pictures\i_setosa.jpg")
-    versicolor = Image.open("iris_pictures\i_versicolor.jpg")
-    virginica = Image.open("iris_pictures\i_virginica.jpg")
+    dir_iris = os.path.abspath(os.path.iris_pictures(__file__))
+    setosa = Image.open(os.path.join(dir_iris, "i_setosa.jpg"))
+    versicolor = Image.open(os.path.join(dir_iris, "i_versicolor.jpg"))
+    virginica = Image.open(os.path.join(dir_iris, "i_virginica.jpg"))
     
     st.sidebar.markdown("#### Select Features:")
     parameter_list = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width']
