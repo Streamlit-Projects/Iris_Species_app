@@ -3,14 +3,22 @@ import numpy as np
 import pandas as pd
 import joblib
 from PIL import Image
+import os.path
+
+dir_name = os.path.abspath(os.path.dirname(__file__))
+
+@st.cache
+def load_model():
+    location = os.path.join('ml_models\knn_model.pkl')
+	loaded_model = joblib.load(open(location,"rb"))
+	return loaded_model
 
 
 def run_ml_app():
     st.subheader("Machine Learning Section")
     
     # Loading our pretrained knn model:
-    model= open("ml_models\knn_model.pkl", "rb")
-    knn_model = joblib.load(model)
+    knn_model = load_model("ml_models\knn_model.pkl")
     
     # Load iris images:
     setosa = Image.open("iris_pictures\i_setosa.jpg")
