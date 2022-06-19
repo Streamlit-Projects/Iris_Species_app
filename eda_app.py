@@ -7,17 +7,6 @@ import os.path
 import plotly.express as px
 
 
-#dir_name = os.path.abspath(os.path.dirname(__file__))
-location = os.path.join(dir_name, 'bobrza1.csv')
-bobrza_locations = pd.read_csv(location)
-
-
-
-
-
-
-
-
 @st.cache(allow_output_mutation=True)
 def load_data(data_path):
     dir_name = os.path.abspath(os.path.dirname(__file__))
