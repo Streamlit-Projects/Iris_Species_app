@@ -6,7 +6,7 @@ Iris species classification app. The app is using machine learning to predict sp
 
 #### Screenshot
 
-![Dashboar Screenshot](https://github.com/mBohunickaCharles/streamlit_Iris_Species_ml_app/blob/master/iris_pictures/iris_species.png)
+![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://github.com/mBohunickaCharles/streamlit_Iris_Species_ml_app/blob/master/iris_pictures/iris_species.png)
 
 #### Author
 
