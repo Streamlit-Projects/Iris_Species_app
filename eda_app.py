@@ -116,7 +116,7 @@ def run_eda_app():
                 st.plotly_chart(fig1)
                 
     else:
-        st.dataframe(df.style.hide_index())
+        st.dataframe(df)
         
         with st.expander("Data Description"):
             st.dataframe(df.describe().transpose())
